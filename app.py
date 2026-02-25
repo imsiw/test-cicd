@@ -1,6 +1,6 @@
 import gradio as gr
 
-def greet(name, intensity):
+def greet(image):
     return "Hello, World"
 
 demo = gr.Interface(
