@@ -4,6 +4,8 @@ from torchvision import transforms
 from torchvision.models import resnet18, ResNet18_Weights
 
 
+
+
 def recognize(image):
     # Преобразуем картинку PIL в тензор
     input_tensor = preprocess(image)
@@ -31,9 +33,12 @@ def recognize(image):
     return "\n".join(result)
 
 
+
+
 # Используем готовую модель, включаем режим инференса
 model = resnet18(weights=ResNet18_Weights.DEFAULT)
 model.eval()
+
 
 # Преобразование входных данных
 preprocess = transforms.Compose([
@@ -46,10 +51,12 @@ preprocess = transforms.Compose([
     )
 ])
 
+
 # Названия классов изображений
 # https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt
 with open("imagenet_classes.txt", "r") as f:
     labels = [s.strip() for s in f.readlines()]
+
 
 # Создание приложения Gradio
 demo = gr.Interface(
