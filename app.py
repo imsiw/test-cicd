@@ -1,7 +1,7 @@
 import gradio as gr
 import torch
-from torchvision import transforms
-from torchvision.models import resnet18, ResNet18_Weights
+from torchvision import transforms # type: ignore
+from torchvision.models import resnet18, ResNet18_Weights # type: ignore
 
 
 
